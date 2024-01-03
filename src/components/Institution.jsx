@@ -4,14 +4,12 @@ import DegreeSelect from "./DegreeSelect";
 import { useState } from "react";
 
 export default function Institution({ isActive, onEdit, onSave }) {
-  const [values, setValues] = useState(
-    {
-      schoolname: "",
-      degree: "",
-      month: "",
-      year: "",
-    }
-  );
+  const [values, setValues] = useState({
+    schoolname: "",
+    degree: "",
+    month: "",
+    year: "",
+  });
   if (isActive) {
     return (
       <>
@@ -23,18 +21,19 @@ export default function Institution({ isActive, onEdit, onSave }) {
           value={values.schoolname}
           maxLength="48"
           size="32"
+          onChange={(event) =>
+            setValues({ ...values, schoolname: event.target.value })
+          }
         />
-        <DegreeSelect 
-          value={values.degree}
-      />
+        <DegreeSelect value={values.degree} />
         <h2>Date of Completion</h2>
-        <MonthSelect 
-          value={values.month}
-      />
-        <YearSelect 
-          value={values.year}
-      />
-        <button onClick={() => {onSave}}>Save</button>
+        <MonthSelect value={values.month} />
+        <YearSelect value={values.year} />
+        <button
+          onClick={onSave}
+        >
+          Save
+        </button>
       </>
     );
   }
@@ -44,7 +43,11 @@ export default function Institution({ isActive, onEdit, onSave }) {
       <p>{values.degree}</p>
       <p>{values.month}</p>
       <p>{values.year}</p>
-      <button onClick={() => {onEdit}}>Edit</button>
+      <button
+        onClick={onEdit}
+      >
+        Edit
+      </button>
     </>
   );
 }
