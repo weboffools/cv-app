@@ -28,7 +28,6 @@ export default function Institution({ isActive, onEdit, onSave }) {
         <select 
           name="degree_type" 
           id="degree" 
-          value={values.degree}
           onChange={(e) => setValues({ ...values, degree: e.target.value })}
         >
           <option>Doctor of Philosophy (PhD)</option>

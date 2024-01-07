@@ -1,4 +1,4 @@
-export default function MonthSelect(values, selectNewMonth) {
+export default function MonthSelect({values, selectNewMonth}) {
   const months = [
     'January',
     'February',
@@ -26,7 +26,7 @@ export default function MonthSelect(values, selectNewMonth) {
       <label htmlFor="month_complete">Month</label>
       <select 
         name="month_complete" 
-        id="month"
+        id="month_complete"
         value={values.month}
         onChange={(e) => selectNewMonth({ ...values, month: e.target.value})}
       >
