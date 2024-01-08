@@ -7,7 +7,7 @@ export default function Institution({ isActive, onEdit, onSave }) {
     schoolname: "University of Some State",
     degree: "Master of Science (MS)",
     month: "May",
-    year: "2023"
+    year: "2024"
   });
 
   if (isActive) {
@@ -44,7 +44,10 @@ export default function Institution({ isActive, onEdit, onSave }) {
           selectNewMonth={setValues}          
           values={values}
         />
-        <YearSelect />
+        <YearSelect 
+          selectNewYear={setValues}
+          values={values}
+        />
         <button onClick={onSave}>Save</button>
       </>
     );

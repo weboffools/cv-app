@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 function getYears() {
   const year = new Date().getFullYear();
   const years = [];
@@ -9,14 +7,12 @@ function getYears() {
   return years;
 }
 
-export default function YearSelect() {
+export default function YearSelect({values, selectNewYear}) {
   const years = getYears();
-  const [value, setValue] = useState(2023);
   const listYears = years.map(year => 
     <option 
       key={year} 
       value={year}
-      onChange={(event) => setValue({value: event.target.value })}
     >
       {year}
     </option>
@@ -24,7 +20,11 @@ export default function YearSelect() {
   return (
     <div>
       <label htmlFor="year_select">Year</label>
-      <select name="year_select" id="year_select">
+      <select 
+        name="year_select" 
+        id="year_select"
+        onChange={(e) => selectNewYear({...values, year: e.target.value })}
+      >
         {listYears}
       </select>
     </div>
