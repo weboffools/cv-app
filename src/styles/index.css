@@ -33,12 +33,18 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  display: grid;
+  gap: 10px;
+}
+
 h1 {
   font-size: 1.5em;
   line-height: 1.1;
 }
 
 form {
+  border: 2px solid lightblue;
   display: grid;
   padding: 10px;
   border-radius: 10px;
@@ -63,6 +69,12 @@ select {
   font-size: 0.8rem;
   padding: 2px;
   margin: 3px;
+}
+
+.general {
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .demographic {
