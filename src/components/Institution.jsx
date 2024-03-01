@@ -1,10 +1,11 @@
 import YearSelect from "./YearSelect";
 import MonthSelect from "./MonthSelect";
 import { useState } from "react";
+import DegreeSelect from "./DegreeSelect";
 
 export default function Institution({ isActive, onEdit, onSave }) {
   const [values, setValues] = useState({
-    schoolname: "University of Some State",
+    schoolname: "University of Somewhere",
     degree: "Master of Science (MS)",
     month: "May",
     year: "2024"
@@ -21,24 +22,12 @@ export default function Institution({ isActive, onEdit, onSave }) {
           value={values.schoolname}
           maxLength="48"
           size="32"
-          onChange={(event) => setValues({ ...values, schoolname: event.target.value })}
+          onChange={(e) => setValues({ ...values, schoolname: e.target.value })}
         />
-        <label htmlFor="degree">Degree</label>
-
-        <select 
-          name="degree_type" 
-          id="degree" 
-          onChange={(e) => setValues({ ...values, degree: e.target.value })}
-        >
-          <option>Doctor of Philosophy (PhD)</option>
-          <option>Master of Science (MS)</option>
-          <option>Master of Arts (MA)</option>
-          <option>Bachelor of Science (BS)</option>
-          <option>Bachelor of Arts (BA)</option>
-          <option>Juris Doctor (JD)</option>
-          <option>Associate of Science (AS)</option>
-          <option>Associate of Arts (AA)</option>
-        </select>
+        <DegreeSelect
+          selectNewDegree={setValues}
+          values={values}
+        />
 
         <MonthSelect 
           selectNewMonth={setValues}          

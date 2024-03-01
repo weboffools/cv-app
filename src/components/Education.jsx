@@ -5,7 +5,7 @@ export default function Education() {
   const [isEditable, setIsEditable] = useState(0);
   return (
     <div className="education">
-      <h1>Education</h1>
+     <h1>Education</h1>
       <Institution 
         isActive={isEditable === 0}
         onEdit={() => setIsEditable(0)}
