@@ -1,3 +1,3 @@
 # CV App
 
-An app to develop skills in developing with React.
+An app that allows the user to display and edit a CV. Used to improve skills in React.
