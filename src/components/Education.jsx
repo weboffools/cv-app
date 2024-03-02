@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Institution from "./Institution";
 
-export default function Education() {
+export default function Education({ onAdd }) {
   const [isEditable, setIsEditable] = useState(0);
   return (
     <div className="education">
@@ -11,16 +11,10 @@ export default function Education() {
         onEdit={() => setIsEditable(0)}
         onSave={() => setIsEditable(-1)}
     />
-      <Institution
-        isActive={isEditable === 1}
-        onEdit={() => setIsEditable(1)}
-        onSave={() => setIsEditable(-1)}
-    />
-      <Institution 
-        isActive={isEditable === 2}
-        onEdit={() => setIsEditable(2)}
-        onSave={() => setIsEditable(-1)}
-    />
+    <hr />
+    <button className="add-btn" onClick={ onAdd }>
+      Add Education
+    </button>
     </div>
   );
 }

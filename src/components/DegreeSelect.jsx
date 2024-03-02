@@ -7,6 +7,7 @@ export default function DegreeSelect({ values, selectNewDegree }) {
           id="degree" 
           onChange={(e) => selectNewDegree({ ...values, degree: e.target.value })}
         >
+          <option defaultValue>-- Select a Degree --</option>
           <option>Doctor of Philosophy (PhD)</option>
           <option>Master of Science (MS)</option>
           <option>Master of Arts (MA)</option>

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import "../styles/form.css";
+import "../styles/demograph.css";
 
 export default function GeneralForm({ isEditable, onEdit, onSave }) {
   const [values, setValues] = useState({

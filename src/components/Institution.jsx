@@ -4,11 +4,12 @@ import { useState } from "react";
 import DegreeSelect from "./DegreeSelect";
 
 export default function Institution({ isActive, onEdit, onSave }) {
+  const date = new Date();
+  const options = { month: "long" };
   const [values, setValues] = useState({
-    schoolname: "University of Somewhere",
-    degree: "Master of Science (MS)",
-    month: "May",
-    year: "2024"
+    schoolname: "Your Institution",
+    month: new Intl.DateTimeFormat("en-US", options).format(date),
+    year: date.getFullYear(),
   });
 
   if (isActive) {

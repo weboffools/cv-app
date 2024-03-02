@@ -43,48 +43,6 @@ h1 {
   line-height: 1.1;
 }
 
-form {
-  border: 2px solid lightblue;
-  display: grid;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid lightgrey;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
-}
-
-label {
-  font-size: 1.0rem;
-}
-
-input {
-  padding: 5px;
-  font-size: 1rem;
-  font-family: inherit;
-  margin: 3px;
-}
-
-select {
-  font-family: inherit;
-  font-size: 0.8rem;
-  padding: 2px;
-  margin: 3px;
-}
-
-.general {
-  border: 2px solid lightblue;
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.demographic {
-  font-size: 1.2rem;
-}
-
-.name {
-  font-weight: bold;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
