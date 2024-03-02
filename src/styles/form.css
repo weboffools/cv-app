@@ -1,0 +1,27 @@
+form {
+  border: 2px solid lightblue;
+  display: grid;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid lightgrey;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+label {
+  font-size: 1.0rem;
+}
+
+input {
+  padding: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  margin: 3px;
+}
+
+select {
+  font-family: inherit;
+  font-size: 0.8rem;
+  padding: 2px;
+  margin: 3px;
+}
