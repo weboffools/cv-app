@@ -3,15 +3,7 @@ import MonthSelect from "./MonthSelect";
 import { useState } from "react";
 import DegreeSelect from "./DegreeSelect";
 
-export default function Institution({ isActive, onEdit, onSave }) {
-  const date = new Date();
-  const options = { month: "long" };
-  const [values, setValues] = useState({
-    schoolname: "Your Institution",
-    month: new Intl.DateTimeFormat("en-US", options).format(date),
-    year: date.getFullYear(),
-  });
-
+export default function Institution({ values, onUpdateValues, isActive, onEdit, onSave }) {
   if (isActive) {
     return (
       <>
@@ -23,19 +15,19 @@ export default function Institution({ isActive, onEdit, onSave }) {
           value={values.schoolname}
           maxLength="48"
           size="32"
-          onChange={(e) => setValues({ ...values, schoolname: e.target.value })}
+          onChange={(e) => onUpdateValues({ ...values, schoolname: e.target.value })}
         />
         <DegreeSelect
-          selectNewDegree={setValues}
+          selectNewDegree={onUpdateValues}
           values={values}
         />
 
         <MonthSelect 
-          selectNewMonth={setValues}          
+          selectNewMonth={onUpdateValues}          
           values={values}
         />
         <YearSelect 
-          selectNewYear={setValues}
+          selectNewYear={onUpdateValues}
           values={values}
         />
         <button onClick={onSave}>Save</button>

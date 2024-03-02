@@ -2,13 +2,7 @@ import { useState } from 'react';
 import "../styles/form.css";
 import "../styles/demograph.css";
 
-export default function GeneralForm({ isEditable, onEdit, onSave }) {
-  const [values, setValues] = useState({
-    firstname: 'John',
-    lastname: 'Smith',
-    email: 'john@gmail.com',
-    location: 'Anytown, TX',
-  });
+export default function GeneralForm({ values, onTextChange, isEditable, onEdit, onSave }) {
   if (isEditable) {
     return (
       <>
@@ -23,7 +17,7 @@ export default function GeneralForm({ isEditable, onEdit, onSave }) {
             size="24"
             required
             onChange={(event) =>
-              setValues({ ...values, firstname: event.target.value })
+              onTextChange({ ...values, firstname: event.target.value })
             }
           />
           <label htmlFor="last_name">Last Name</label>
@@ -36,7 +30,7 @@ export default function GeneralForm({ isEditable, onEdit, onSave }) {
             size="24"
             required
             onChange={(event) =>
-              setValues({ ...values, lastname: event.target.value })
+              onTextChange({ ...values, lastname: event.target.value })
             }
           />
           <label htmlFor="email">Email</label>
@@ -50,7 +44,7 @@ export default function GeneralForm({ isEditable, onEdit, onSave }) {
             size="32"
             required
             onChange={(event) =>
-              setValues({ ...values, email: event.target.value })
+              onTextChange({ ...values, email: event.target.value })
             }
           />
           <label htmlFor="location">Location</label>
@@ -62,7 +56,7 @@ export default function GeneralForm({ isEditable, onEdit, onSave }) {
             maxLength="32"
             size="24"
             onChange={(event) =>
-              setValues({ ...values, location: event.target.value })
+              onTextChange({ ...values, location: event.target.value })
             }
           />
           <button onClick={onSave}>Save</button>
