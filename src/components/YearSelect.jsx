@@ -7,7 +7,7 @@ function getYears() {
   return years;
 }
 
-export default function YearSelect({yearComplete, setYear, schoolId}) {
+export default function YearSelect({name, setYear, itemId}) {
   const years = getYears();
   const listYears = years.map(year => 
     <option 
@@ -19,12 +19,11 @@ export default function YearSelect({yearComplete, setYear, schoolId}) {
   );
   return (
     <div>
-      <label htmlFor="year_select">Year</label>
+      <label htmlFor="year_select">{name}</label>
       <select 
         name="year_select" 
         id="year_select"
-        value={yearComplete}
-        onChange={(e) => setYear(e, schoolId, 'year')}
+        onChange={(e) => setYear(e, itemId, 'year')}
       >
         {listYears}
       </select>

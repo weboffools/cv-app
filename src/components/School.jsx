@@ -1,7 +1,7 @@
 import YearSelect from './YearSelect';
 import MonthSelect from './MonthSelect';
 import DegreeSelect from './DegreeSelect';
-import { useState, useId } from 'react';
+import { useState } from 'react';
 
 export default function School({
   edus,
@@ -51,9 +51,10 @@ export default function School({
         />
 
         <YearSelect
-          yearComplete={yearComplete}
+          name='Year'
+          value={yearComplete}
           setYear={handleChange}
-          schoolId={schoolId}
+          itemId={schoolId}
         />
         <button onClick={() => setIsEditable(false)}>Save</button>
       </form>
