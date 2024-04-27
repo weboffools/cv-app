@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function Education() {
 
   const [edus, setEdus] = useState([{
-    id: '1',
+    id: '0',
     name: 'Some School',
     degree: 'Bachelor of Arts',
     month: 'May',
