@@ -55,6 +55,7 @@ export default function School({
           value={yearComplete}
           setYear={handleChange}
           itemId={schoolId}
+          property='year'
         />
         <button onClick={() => setIsEditable(false)}>Save</button>
       </form>

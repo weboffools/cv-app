@@ -57,8 +57,8 @@ export default function Job({
           rows="6"
           cols="32"
         ></textarea>
-        <YearSelect name="Year Started" value={jobStart} setYear={handleChange} itemId={jobId} />
-        <YearSelect name="Year Ended" value={jobEnd} setYear={handleChange} itemId={jobId} />
+        <YearSelect name="Year Started" setYear={handleChange} itemId={jobId} property='startYear' />
+        <YearSelect name="Year Ended" setYear={handleChange} itemId={jobId} property='endYear'/>
 
         <button onClick={() => setIsEditable(false)}>Save</button>
       </form>
