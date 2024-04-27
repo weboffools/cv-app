@@ -1,10 +1,11 @@
 import School from './School';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Education() {
   const [edus, setEdus] = useState([
     {
-      id: '0',
+      id: uuidv4(),
       name: 'Some School',
       degree: 'Bachelor of Arts',
       month: 'May',
@@ -12,11 +13,21 @@ export default function Education() {
     },
   ]);
 
+  function handleNewSchool() {
+    setEdus([...edus, {
+      id: uuidv4(),
+      name: '',
+      degree: '',
+      month: '',
+      year: '',
+    }])
+  }
+
   const schools = edus.map((edu) => (
     <School
       edus={edus}
       key={edu.id}
-      addSchool={setEdus}
+      editSchool={setEdus}
       schoolId={edu.id}
       schoolName={edu.name}
       degreeGranted={edu.degree}
@@ -28,6 +39,9 @@ export default function Education() {
     <div className="education">
       <h1>Education</h1>
       <div>{schools}</div>
+      <button
+        onClick={handleNewSchool}
+    >Add Education</button>
     </div>
   );
 }

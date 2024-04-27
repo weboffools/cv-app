@@ -5,17 +5,17 @@ import { useState, useId } from 'react';
 
 export default function School({
   edus,
-  addSchool,
+  editSchool,
   schoolId,
   schoolName,
   degreeGranted,
   monthComplete,
   yearComplete,
 }) {
-  const [isEditable, setIsEditable] = useState(false);
+  const [isEditable, setIsEditable] = useState(true);
 
   function handleChange(e, schoolId, property) {
-    addSchool(
+    editSchool(
       edus.map((edu) => {
         if (edu.id === schoolId) {
           return { ...edu, [property]: e.target.value };
