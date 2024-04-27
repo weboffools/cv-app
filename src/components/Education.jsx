@@ -2,14 +2,15 @@ import School from './School';
 import { useState } from 'react';
 
 export default function Education() {
-
-  const [edus, setEdus] = useState([{
-    id: '0',
-    name: 'Some School',
-    degree: 'Bachelor of Arts',
-    month: 'May',
-    year: '2010',
-  }]);
+  const [edus, setEdus] = useState([
+    {
+      id: '0',
+      name: 'Some School',
+      degree: 'Bachelor of Arts',
+      month: 'May',
+      year: '2010',
+    },
+  ]);
 
   const schools = edus.map((edu) => (
     <School
@@ -26,9 +27,7 @@ export default function Education() {
   return (
     <div className="education">
       <h1>Education</h1>
-      <div>
-      {schools}
-    </div>
+      <div>{schools}</div>
     </div>
   );
 }
