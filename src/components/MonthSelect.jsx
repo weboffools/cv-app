@@ -1,4 +1,5 @@
-export default function MonthSelect({values, selectNewMonth}) {
+export default function MonthSelect({monthComplete, setMonth, schoolId}) {
+
   const months = [
     'January',
     'February',
@@ -27,8 +28,8 @@ export default function MonthSelect({values, selectNewMonth}) {
       <select 
         name="month_complete" 
         id="month_complete"
-        value={values.month}
-        onChange={(e) => selectNewMonth({ ...values, month: e.target.value})}
+        value={monthComplete}
+        onChange={(e) => setMonth(e, schoolId, 'month')}
       >
         {listMonths}    
       </select>
